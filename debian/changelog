@@ -1,5 +1,8 @@
 ruby-rufus-scheduler (3.1.10-1) unstable; urgency=medium
 
   * Initial release (Closes: #807376)
+  * fix-tests.patch: Patch to solve test failures due to incorrect handling
+    of next month calculation. Applied upstream and may be dropped in next
+    version update.
 
  -- Balasankar C <balasankarc@autistici.org>  Tue, 08 Dec 2015 01:27:18 +0530
