@@ -1,0 +1,24 @@
+Description: Patch tests to fix current month dependency
+ One of the tests were using the expression `current month + 1` inside a time
+ parser function, which resulted in an error if current month was 12 (i.e Dec)
+Author: Balasankar C <balasankarc@autistici.org>
+Bug: https://github.com/jmettraux/rufus-scheduler/issues/182
+Applied-Upstream: https://github.com/jmettraux/rufus-scheduler/pull/183
+Last-Update: 2015-12-08
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/spec/job_cron_spec.rb
++++ b/spec/job_cron_spec.rb
+@@ -108,7 +108,11 @@
+     it 'returns the next trigger time' do
+ 
+       n = Time.now
+-      nt = Time.parse("#{n.year}-#{n.month + 1}-01")
++      if n.month == 12
++          nt = Time.parse("#{n.year + 1}-01-01")
++      else
++          nt = Time.parse("#{n.year}-#{n.month + 1}-01")
++      end
+ 
+       expect(
+         @scheduler.schedule_cron('* * 1 * *', lambda {}).next_time
