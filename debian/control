@@ -3,10 +3,7 @@ Section: ruby
 Priority: optional
 Maintainer: Debian Ruby Extras Maintainers <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
 Uploaders: Balasankar C <balasankarc@autistici.org>
-Build-Depends: debhelper (>= 9~),
-               gem2deb,
-               rake,
-               ruby-rspec
+Build-Depends: debhelper (>= 9~), gem2deb, rake, ruby-chronic, ruby-rspec
 Standards-Version: 3.9.6
 Vcs-Git: git://anonscm.debian.org/pkg-ruby-extras/ruby-rufus-scheduler.git
 Vcs-Browser: https://anonscm.debian.org/cgit/pkg-ruby-extras/ruby-rufus-scheduler.git
@@ -17,8 +14,8 @@ XS-Ruby-Versions: all
 Package: ruby-rufus-scheduler
 Architecture: all
 XB-Ruby-Versions: ${ruby:Versions}
-Depends: ruby | ruby-interpreter,
-         ${misc:Depends},
-         ${shlibs:Depends}
-Description: job scheduler for Ruby (at, cron, in and every jobs)
- job scheduler for Ruby (at, cron, in and every jobs).
+Depends: ruby | ruby-interpreter, ${misc:Depends}, ${shlibs:Depends}
+Description: job scheduler for Ruby
+ This package provides the gem rufus-scheduler, a job scheduler for Ruby. It
+ is an in-process, in-memory scheduler that provides scheduling using at, cron,
+ in and every jobs.

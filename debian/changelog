@@ -1,5 +1,5 @@
-ruby-rufus-scheduler (3.1.10-1) UNRELEASED; urgency=medium
+ruby-rufus-scheduler (3.1.10-1) unstable; urgency=medium
 
-  * Initial release (Closes: #nnnn)
+  * Initial release (Closes: #807376)
 
- -- Balasankar C <balasankarc@autistici.org>  Tue, 08 Dec 2015 12:31:14 +0530
+ -- Balasankar C <balasankarc@autistici.org>  Tue, 08 Dec 2015 01:27:18 +0530
